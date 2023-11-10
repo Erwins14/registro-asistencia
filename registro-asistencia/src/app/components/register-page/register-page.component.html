@@ -1,0 +1,16 @@
+<div class="background">
+    <div class="login-container">
+        <div class="form-container">
+            <h1>Registrate</h1>
+            <h5>Regístrate con tu correo electrónico</h5>
+            <app-login-form (formData)="register($event)"></app-login-form>
+        </div>
+        <div class="text-container">
+            <h1>Hey!</h1>
+            <p>
+                ¿Ya tienes una cuenta? haz clic en el botón de abajo para ¡Iniciar sesión!
+            </p>
+            <button mat-button routerLink="/">Iniciar Sesión</button>
+        </div>
+    </div>
+</div>
