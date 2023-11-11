@@ -1,5 +1,6 @@
 import {
   Auth,
+  authState,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -15,6 +16,10 @@ import { LoginData } from '../interfaces/login-data.interface';
 export class AuthService {
 
   constructor(private auth: Auth) {}
+
+  get userState(){
+    return authState(this.auth)
+  }
 
   login({ email, password }: LoginData) {
     return signInWithEmailAndPassword(this.auth, email, password);

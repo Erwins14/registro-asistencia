@@ -1,12 +1,21 @@
-<nav class="navbar bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">App Empleados - Firebase</span>
 
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="#" class="nav-link" (click)="logout()">Log out</a>
-            </li>
-        </ul>
+        <div class="collapse navbar-collapse navbar-nav d-flex justify-content-end" id="navbarNavAltMarkup">
+            
+            <ng-container *ngIf="user$ | async as user; else showLinks">
+                <!-- {{user.email}} -->
+                <span class="navbar-brand"><a routerLink="list-users" class="nav-link">Asistencia</a></span>
+                <span class="navbar-brand"><a routerLink="list-users" class="nav-link">Empleados</a></span>
+                <span class="navbar-brand"><a href="#" class="nav-link" (click)="logout()">Log Out</a></span>
+            </ng-container>
+            <ng-template #showLinks>
+                <!-- <span class="navbar-brand"><a routerLink="/" class="nav-link">Sign In</a></span>
+                <span class="navbar-brand"><a routerLink="register" class="nav-link">Sign Up</a></span> -->
+            </ng-template>
+            
+        </div>
 
         <!-- <span class="navbar-brand"><a (click)="logout()">Log out</a></span> -->
     </div>
