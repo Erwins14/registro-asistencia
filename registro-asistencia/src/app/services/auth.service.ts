@@ -1,8 +1,10 @@
 import {
   Auth,
+  GoogleAuthProvider,
   authState,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from '@angular/fire/auth';
 
@@ -23,6 +25,10 @@ export class AuthService {
 
   login({ email, password }: LoginData) {
     return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  loginWithGoogle() {
+    return signInWithPopup(this.auth, new GoogleAuthProvider());
   }
 
   register({ email, password }: LoginData) {

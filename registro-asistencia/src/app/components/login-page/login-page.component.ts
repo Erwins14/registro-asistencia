@@ -24,4 +24,11 @@ export class LoginPageComponent implements OnInit {
       .then(() => this.router.navigate(['/list-users']))
       .catch((e) => console.log(e.message));
   }
+
+  loginWithGoogle() {
+    this.authService
+      .loginWithGoogle()
+      .then(() => this.router.navigate(['/list-users']))
+      .catch((e) => console.log(e.message));
+  }
 }

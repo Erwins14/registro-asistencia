@@ -1,15 +1,27 @@
+
+
 <div class="background">
     <div class="login-container">
         <div class="text-container">
             <h1>Hey!</h1>
             <p>
-            ¿Quieres crear una cuenta para acceder a esta increíble aplicación?
+            ¿Quieres crear una cuenta para acceder a esta aplicación?
             ¡Haz clic en el botón de abajo!
             </p>
             <button mat-button routerLink="/register">Registrate</button>
         </div>
         <div class="form-container">
             <h1>Bienvenido</h1>
+            <div class="g-sign-in-button mb-3" (click)="loginWithGoogle()">
+                <div class="content-wrapper">
+                    <div class="logo-wrapper">
+                        <img src="https://developers.google.com/identity/images/g-logo.png"/>
+                    </div>
+                    <span class="text-container2">
+                        <span>Inicia sesión con Google</span>
+                    </span>
+                </div>
+            </div>
             <h5>Inicia sesión con tu correo electrónico</h5>
             <app-login-form (formData)="login($event)"></app-login-form>
         </div>
