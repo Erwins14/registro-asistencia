@@ -6,7 +6,7 @@
             
             <ng-container *ngIf="user$ | async as user; else showLinks">
                 <!-- {{user.email}} -->
-                <span class="navbar-brand"><a routerLink="list-users" class="nav-link">Asistencia</a></span>
+                <span class="navbar-brand"><a routerLink="attendance" class="nav-link">Asistencia</a></span>
                 <span class="navbar-brand"><a routerLink="list-users" class="nav-link">Empleados</a></span>
                 <span class="navbar-brand"><a href="#" class="nav-link" (click)="logout()">Log Out</a></span>
             </ng-container>
