@@ -13,30 +13,13 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><input type="text" class="form-control" placeholder="Nombre"></td>
-                        <td><input type="text" class="form-control" placeholder="Apellido"></td>
-                        <td>Inactivo</td>
-                        <td>
-                            <i class="bi bi-floppy-fill fs-3 text-success me-2"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><input type="text" class="form-control" placeholder="Nombre"></td>
-                        <td><input type="text" class="form-control" placeholder="Apellido"></td>
-                        <td>Inactivo</td>
-                        <td>
-                            <i class="bi bi-floppy-fill fs-3 text-success me-2"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><input type="text" class="form-control" placeholder="Nombre"></td>
-                        <td><input type="text" class="form-control" placeholder="Apellido"></td>
-                        <td>Inactivo</td>
+                <tbody *ngFor="let usuario of usuarios; index as i">
+                    <tr *ngIf="usuario.userStatus==0">
+                        <td>{{usuario.cardUID}}</td>
+                        <td><input type="text" class="form-control" formControlName="nombre" placeholder="Nombre"></td>
+                        <td><input type="text" class="form-control" formControlName="apellido" placeholder="Apellido"></td>
+                        <td *ngIf="usuario.userStatus==1; else inactivo">Activo</td>
+                        <ng-template #inactivo><td>Inactivo</td></ng-template>
                         <td>
                             <i class="bi bi-floppy-fill fs-3 text-success me-2"></i>
                         </td>
