@@ -21,7 +21,11 @@ export class RegisterPageComponent implements OnInit {
   register(data: LoginData) {
     this.authService
       .register(data)
-      .then(() => this.router.navigate(['/']))
+      .then(() => {
+        // this.authService.sendEmailVerification(); // Llama al método para enviar la verificación de correo
+        this.router.navigate(['/']);
+      })
       .catch((e) => console.log(e.message));
   }
+
 }

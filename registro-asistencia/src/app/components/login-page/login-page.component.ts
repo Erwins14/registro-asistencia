@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 
 export class LoginPageComponent implements OnInit {
+  
+  submitted = false;
+  
   constructor(
     private readonly authService: AuthService,
     private readonly router: Router
@@ -22,7 +25,10 @@ export class LoginPageComponent implements OnInit {
     this.authService
       .login(loginData)
       .then(() => this.router.navigate(['/list-users']))
-      .catch((e) => console.log(e.message));
+      .catch((e) => {
+        console.log(e.message);
+        this.submitted = true;
+      });
   }
 
   loginWithGoogle() {

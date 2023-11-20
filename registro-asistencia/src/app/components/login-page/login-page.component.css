@@ -61,6 +61,14 @@ p {
     width: 70%;
 }
 
+.incorrect {
+    color: red;
+    font-size: 0.75rem;
+    align-items: center;
+    padding: 5px;
+    width: 80%;
+}
+
 .text-container h1 {
     color: #fff;
 }

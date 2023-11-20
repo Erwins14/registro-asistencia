@@ -20,6 +20,9 @@
                     </span>
                 </div>
             </div>
+            <span *ngIf="submitted" class="incorrect">La dirección de correo electrónico
+                o la contraseña que has introducido no son correctas.
+            </span>
             <h5>Inicia sesión con tu correo electrónico</h5>
             <app-login-form (formData)="login($event)"></app-login-form>
         </div>

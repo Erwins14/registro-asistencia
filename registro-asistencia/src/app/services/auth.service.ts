@@ -3,6 +3,7 @@ import {
   GoogleAuthProvider,
   authState,
   createUserWithEmailAndPassword,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -38,5 +39,19 @@ export class AuthService {
   logout() {
     return signOut(this.auth);
   }
+
+  // async sendEmailVerification() {
+  //   const user = this.auth.currentUser;
+  //   if (user) {
+  //     try {
+  //       await sendEmailVerification(user); // Envía el correo de verificación
+  //       console.log('Correo de verificación enviado');
+  //       // Puedes mostrar un mensaje al usuario indicando que se ha enviado el correo de verificación.
+  //     } catch (error) {
+  //       console.error('Error al enviar el correo de verificación:', error);
+  //       // Maneja cualquier error que pueda ocurrir al enviar el correo de verificación.
+  //     }
+  //   }
+  // }
 
 }
