@@ -1,9 +1,11 @@
 <div class="container mt-4">
     <div class="card">
-        <div class="card-body">
-            <span class="h3">Asistencia de Empleados</span>
-
-            <div>
+        <div class="card-body ">
+            <div class="card-bd d-flex justify-content-between align-items-center">
+                <span class="h3">Asistencia de Empleados</span>
+                <input type="text" class="form-control mb-3" placeholder="Buscar registro" [(ngModel)]="filtro">
+            </div>
+            <div class="table-wrapper" (scroll)="onScroll($event.target)">
                 <table class="table table-striped mt-5">
                     <thead>
                         <tr>
@@ -15,7 +17,7 @@
                             <th scope="col">Estado</th>
                         </tr>
                     </thead>
-                    <tbody *ngFor="let asistencia of asistencias; index as i">
+                    <tbody *ngFor="let asistencia of filtrarAsistencias(); index as i">
                         <tr>
                             <td>{{asistencia.uid}}</td>
                             <td>{{asistencia.nombre}}</td>
@@ -31,7 +33,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </div>

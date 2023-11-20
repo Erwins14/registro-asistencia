@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class EditUserComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private _userService: UserService,
     private router: Router,
-    private aRoute: ActivatedRoute) {
+    private aRoute: ActivatedRoute,
+    private toastr: ToastrService) {
     this.editEmpleado = this.fb.group({
       cardUID: ['', Validators.required],
       nombre: ['', Validators.required],
@@ -48,7 +50,9 @@ export class EditUserComponent implements OnInit {
     this.loading = true;
 
     this._userService.editarEmpleado(empleado).then(() => {
-      console.log('Empleado registrado con exito!');
+      this.toastr.success('El empleado fue registrado con éxito!', 'Empleado Registrado', {
+        positionClass : 'toast-bottom-right'
+      });
       this.loading = false;
       this.router.navigate(['/list-users'])
     }).catch(error => {

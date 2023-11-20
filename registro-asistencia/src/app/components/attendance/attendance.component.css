@@ -1,0 +1,89 @@
+
+/* Ajustes generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajuste del contenedor principal */
+.container {
+    max-width: 100%;
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Estilos para el título */
+.card-body .h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Ajuste del tamaño y alineación del campo de búsqueda */
+.form-control {
+    width: 200px; /* Ajusta el ancho según lo necesites */
+}
+
+/* Estilos para la tabla */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-collapse: collapse;
+}
+
+.table-wrapper {
+    height: 400px; /* Ajusta la altura máxima de la tabla */
+    overflow-y: auto; /* Agrega un scroll vertical */
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Estilo para celdas con íconos */
+.table td i {
+    margin-right: 5px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .form-control {
+        width: 150px; /* Reducir el tamaño para pantallas pequeñas */
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 600px) {
+    .form-control {
+        width: 100px; /* Reducir el tamaño para pantallas pequeñas */
+    }
+}

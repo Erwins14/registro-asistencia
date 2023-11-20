@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <div class="card ">
+    <div class="card">
         <div class="card-body">
             <span class="h3">Listado de Empleados</span>
             <button class="btn btn-dark btn-lg float-end" routerLink="/create-user"><i
@@ -21,20 +21,21 @@
                             <td>{{usuario.cardUID}}</td>
                             <td>{{usuario.nombre}}</td>
                             <td>{{usuario.apellido}}</td>
-                            <td *ngIf="usuario.userStatus==1; else inactivo"><i
-                                    class="bi bi-person-fill-check fs-3 text-success"></i></td>
+                            <td *ngIf="usuario.userStatus==1; else inactivo">
+                                <i class="bi bi-person-fill-check fs-3 text-success"></i></td>
                             <ng-template #inactivo>
                                 <td><i class="bi bi-person-fill-x fs-3 text-secondary"></i></td>
                             </ng-template>
                             <td>
-                                <i class="bi bi-pencil-square fs-3 text-info"
+                                <i class="bi bi-pencil-square fs-3 text-info me-3"
                                     routerLink="/edit-user/{{usuario.cardUID}}"></i>
+                                <i (click)="inactivarEmpleado(usuario.cardUID)" class="bi bi-x-square fs-3 text-danger"></i>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </div>
+

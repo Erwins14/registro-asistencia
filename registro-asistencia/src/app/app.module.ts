@@ -7,8 +7,10 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -22,7 +24,6 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
@@ -52,7 +53,9 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     MatFormFieldModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ToastrModule.forRoot(), // ToastrModule added
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
