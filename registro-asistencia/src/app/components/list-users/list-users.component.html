@@ -1,9 +1,10 @@
 <div class="container mt-4">
-    <div class="card">
+    <div class="card ">
         <div class="card-body">
             <span class="h3">Listado de Empleados</span>
-            <button class="btn btn-dark btn-lg float-end" routerLink="/create-user"><i class="bi bi-person-plus-fill fs-4"></i> Registrar</button>
-            
+            <button class="btn btn-dark btn-lg float-end" routerLink="/create-user"><i
+                    class="bi bi-person-plus-fill fs-4"></i> Registrar</button>
+
             <div>
                 <table class="table table-striped mt-5">
                     <thead>
@@ -20,11 +21,14 @@
                             <td>{{usuario.cardUID}}</td>
                             <td>{{usuario.nombre}}</td>
                             <td>{{usuario.apellido}}</td>
-                            <td *ngIf="usuario.userStatus==1; else inactivo">Activo</td>
-                            <ng-template #inactivo><td>Inactivo</td></ng-template>
+                            <td *ngIf="usuario.userStatus==1; else inactivo"><i
+                                    class="bi bi-person-fill-check fs-3 text-success"></i></td>
+                            <ng-template #inactivo>
+                                <td><i class="bi bi-person-fill-x fs-3 text-secondary"></i></td>
+                            </ng-template>
                             <td>
-                                <i class="bi bi-pencil-square fs-3 text-info me-2"></i>
-                                <i class="bi bi-trash3-fill fs-3 text-danger"></i>
+                                <i class="bi bi-pencil-square fs-3 text-info"
+                                    routerLink="/edit-user/{{usuario.cardUID}}"></i>
                             </td>
                         </tr>
                     </tbody>

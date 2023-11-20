@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <span class="h3">Asistencia de Empleados</span>
-            
+
             <div>
                 <table class="table table-striped mt-5">
                     <thead>
@@ -22,8 +22,11 @@
                             <td>{{asistencia.apellido}}</td>
                             <td>{{asistencia.date}}</td>
                             <td>{{asistencia.time}}</td>
-                            <td *ngIf="asistencia.status==1; else checkout"><i class="bi bi-box-arrow-in-right fs-3 text-success"></i></td>
-                            <ng-template #checkout><td><i class="bi bi-box-arrow-in-left fs-3 text-danger"></i></td></ng-template>
+                            <td *ngIf="asistencia.status==1; else checkout"><i
+                                    class="bi bi-box-arrow-in-right fs-3 text-success"></i></td>
+                            <ng-template #checkout>
+                                <td><i class="bi bi-box-arrow-in-left fs-3 text-danger"></i></td>
+                            </ng-template>
                         </tr>
                     </tbody>
                 </table>

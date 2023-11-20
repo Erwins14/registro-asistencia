@@ -4,9 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
+
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['list-users']);
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterPageComponent, ...canActivate(redirectLoggedInToHome), },
   { path: 'list-users', component: ListUsersComponent, ...canActivate(redirectUnauthorizedToLogin), },
   { path: 'create-user', component: CreateUserComponent, ...canActivate(redirectUnauthorizedToLogin), },
+  { path: 'edit-user/:id', component: EditUserComponent, ...canActivate(redirectUnauthorizedToLogin), },
   { path: 'attendance', component: AttendanceComponent, ...canActivate(redirectUnauthorizedToLogin), },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

@@ -14,9 +14,9 @@ export class LoginPageComponent implements OnInit {
   constructor(
     private readonly authService: AuthService,
     private readonly router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   login(loginData: LoginData) {
     this.authService

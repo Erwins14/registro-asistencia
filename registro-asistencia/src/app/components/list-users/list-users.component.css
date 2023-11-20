@@ -1,3 +1,7 @@
-i {
+/* i {
+    cursor: pointer;
+} */
+
+.bi-pencil-square{
     cursor: pointer;
 }

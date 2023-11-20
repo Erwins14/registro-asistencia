@@ -12,9 +12,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.css']
 })
 
-export class NavbarComponent{
+export class NavbarComponent {
 
-  user$!:Observable<User | null>;
+  user$!: Observable<User | null>;
 
   constructor(private authService: AuthService, private router: Router) {
     this.user$ = this.authService.userState;

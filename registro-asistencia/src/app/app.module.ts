@@ -25,6 +25,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AttendanceComponent } from './components/attendance/attendance.componen
     LoginPageComponent,
     LoginFormComponent,
     RegisterPageComponent,
-    AttendanceComponent
+    AttendanceComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

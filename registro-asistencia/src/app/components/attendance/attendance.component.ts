@@ -6,22 +6,22 @@ import { Database, onValue, ref } from '@angular/fire/database';
   templateUrl: './attendance.component.html',
   styleUrls: ['./attendance.component.css']
 })
-export class AttendanceComponent implements OnInit{
+export class AttendanceComponent implements OnInit {
 
-  asistencias: Array<any>=[]
+  asistencias: Array<any> = []
 
-  constructor(public database:Database) {}
+  constructor(public database: Database) { }
 
   ngOnInit(): void {
     this.obtenerAsistencia();
   }
 
-  obtenerAsistencia(){
+  obtenerAsistencia() {
     const starCountRef = ref(this.database, 'asistencia/');
     onValue(starCountRef, (snapshot) => {
       snapshot.forEach((childSnapshot) => {
         const childData = childSnapshot.val();
-        let asistencia = {uid:childData.uid,nombre:childData.nombre,apellido:childData.apellido,date:childData.date,time:childData.time,status:childData.status};
+        let asistencia = { uid: childData.uid, nombre: childData.nombre, apellido: childData.apellido, date: childData.date, time: childData.time, status: childData.status };
         this.asistencias.push(asistencia);
       });
     });

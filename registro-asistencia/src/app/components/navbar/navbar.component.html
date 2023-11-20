@@ -3,7 +3,7 @@
         <span class="navbar-brand mb-0 h1">App Empleados - Firebase</span>
 
         <div class="collapse navbar-collapse navbar-nav d-flex justify-content-end" id="navbarNavAltMarkup">
-            
+
             <ng-container *ngIf="user$ | async as user; else showLinks">
                 <!-- {{user.email}} -->
                 <span class="navbar-brand"><a routerLink="attendance" class="nav-link">Asistencia</a></span>
@@ -14,7 +14,7 @@
                 <!-- <span class="navbar-brand"><a routerLink="/" class="nav-link">Sign In</a></span>
                 <span class="navbar-brand"><a routerLink="register" class="nav-link">Sign Up</a></span> -->
             </ng-template>
-            
+
         </div>
 
         <!-- <span class="navbar-brand"><a (click)="logout()">Log out</a></span> -->
