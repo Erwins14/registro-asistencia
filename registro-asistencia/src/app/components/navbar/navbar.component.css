@@ -8,14 +8,14 @@
 }
 
 /* Estilos para pantallas grandes */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .navbar-brand {
         margin-right: 20px;
     }
-}
+} */
 
   /* Estilos para pantallas medianas */
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
     .navbar-brand {
         margin-right: 10px;
     }
@@ -28,4 +28,4 @@
     .navbar-nav .navbar-brand {
         margin: 5px 0;
     }
-}
+} */

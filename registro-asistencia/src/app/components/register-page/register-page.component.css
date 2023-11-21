@@ -16,7 +16,12 @@ h5 {
 
 button {
     border-radius: 20px;
-    padding: 0 50px;
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 p {
@@ -35,7 +40,8 @@ p {
     border-radius: 10px;
     box-shadow: 0 0 20px 2px #e4e4e4;
     display: flex;
-    width: 60%;
+    width: 70%;
+    overflow: hidden;
 }
 
 .text-container {
@@ -69,4 +75,27 @@ p {
     background-color: transparent;
     border: 1px solid #fff;
     padding: 15px;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .text-container {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        padding: 30px;
+    }
+
+    .form-container {
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        padding: 50px;
+    }
+
+    button {
+        padding: 8px 20px;
+    }
 }

@@ -5,15 +5,32 @@ button {
     padding: 0 50px;
 }
 
+form-footer {
+    display: flex;
+    justify-content: center;
+}
+
 form {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 200px;
-    width: 300px;
+    max-width: 400px;
+    margin: auto;
 }
 
 mat-form-field {
     width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Media query para ajustar los estilos en dispositivos más pequeños */
+@media screen and (max-width: 400px) {
+    .form {
+        max-width: 200px;
+    }
+    .form-footer button {
+        padding: 10px 20px; /* Ajustar el padding para cambiar el tamaño */
+        font-size: 14px; /* Cambiar el tamaño de la fuente */
+    }
 }
