@@ -23,8 +23,8 @@ export class EditUserComponent implements OnInit {
     private toastr: ToastrService) {
     this.editEmpleado = this.fb.group({
       cardUID: ['', Validators.required],
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
+      nombre: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]], // Acepta solo texto y espacios
+      apellido: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]], // Acepta solo texto y espacios
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
     console.log(this.id);
