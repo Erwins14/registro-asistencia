@@ -2,20 +2,24 @@
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">App Empleados - Firebase</span>
 
-        <div class="collapse navbar-collapse navbar-nav d-flex justify-content-end" id="navbarNavAltMarkup">
-            <ng-container *ngIf="user$ | async as user; else showLinks">
-                <!-- {{user.email}} -->
-                <span class="navbar-brand"><a routerLink="attendance" class="nav-link">Asistencia</a></span>
-                <span class="navbar-brand"><a routerLink="list-users" class="nav-link">Empleados</a></span>
-                <span class="navbar-brand"><a href="#" class="nav-link" (click)="logout()">Log Out</a></span>
-            </ng-container>
-            <ng-template #showLinks>
-                <!-- Opciones cuando no hay usuario autenticado -->
-                <!-- <span class="navbar-brand"><a routerLink="/" class="nav-link">Sign In</a></span>
-                <span class="navbar-brand"><a routerLink="register" class="nav-link">Sign Up</a></span> -->
-            </ng-template>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <ng-container *ngIf="user$ | async as user; else showLinks">
+                    <span class="nav-item navbar-brand"><a routerLink="attendance" class="nav-link">Asistencia</a></span>
+                    <span class="nav-item navbar-brand"><a routerLink="list-users" class="nav-link">Empleados</a></span>
+                    <span class="nav-item navbar-brand"><a href="#" class="nav-link" (click)="logout()">Log Out</a></span>
+                </ng-container>
+                <ng-template #showLinks>
+                    <!-- Opciones cuando no hay usuario autenticado -->
+                    <!-- <span class="nav-item"><a routerLink="/" class="nav-link">Sign In</a></span>
+                    <span class="nav-item"><a routerLink="register" class="nav-link">Sign Up</a></span> -->
+                </ng-template>
+            </div>
         </div>
 
-        <!-- <span class="navbar-brand"><a (click)="logout()">Log out</a></span> -->
     </div>
 </nav>
